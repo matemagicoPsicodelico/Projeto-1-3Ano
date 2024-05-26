@@ -1,0 +1,38 @@
+<!--Para criar a estrutura do HTML basta digitar "!" e dar enter-->
+
+<!--Instale a intensão "Live Server" e "Live Preview" -->
+
+<!DOCTYPE html>
+<!--Trocar "en" que significa inglês por "pt-br" que é o português do brasil-->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 1 - 3º Ano</title> 
+        <!--Linkar o HTML com  o CSS-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!--Para criar uma divisão de conteúdo, utilizaremos a tag <div> com classe
+de nome botoes. Dentro dessa tag <div>, criaremos quatro botões e
+inseriremos os textos correspondentes a cada um deles, com uma classe
+de nome botao.-->
+    <section class="conteudo-principal"></section>
+    <h2 class="titulo-principal">Meus Objetivos do ano
+        <span> Um texto em outra cor<span></h2>
+    <div class="conteudo">
+    <div class="botoes">
+        <!--Repare que a "linha verde" esta linkada com o 
+            ".ativo" no arquivo style.css para destacar 
+            o botao que esta ativo-->
+        <button class="botao ativo">Cursos na Alura</button>
+        <button class="botao">Criar projetos em JavaScript</button>
+        <button class="botao">Criar um portfólio</button>
+        <button class="botao">Atualizar meu currículo</button>
+    </div>
+    <!--antes do final da tag body temos que criar uma conexao
+    com o java script atraves de "main.js"-->
+    <script src="main.js"></script>
+</body>
+</html>

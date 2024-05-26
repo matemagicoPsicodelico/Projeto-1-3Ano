@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/ css2?family=Chakra+Petch:wght@400;700&display=swap');
+
+/* Para alinhar nosso projeto ao design proposto no protótipo do Figma,
+faremos modificações na cor de fundo, tipografia e cor do texto. Para
+isso, aplicaremos estilos ao elemento <body>, utilizando nossas variáveis
+de cores e incorporando nossa fonte. */
+
+:root { 
+    --cor-de-fundo: #1E1E1E;
+     --verde: #6FFF57;
+     --branco: #FFFFFF; 
+     --botao-ativo: #3A375E; 
+     --botao-inativo: rgba(58, 55, 94, 0.5); 
+     --texto-fundo: rgba(58, 55, 94, 0.3); 
+}
+
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco); 
+    font-family: ‘Chakra Petch’, sans-serif;
+}
+
+
+/* temos a propriedade
+display: flex;, que é utilizada para estabelecer um contêiner flexível com
+o objetivo de organizar os elementos filhos.
+A propriedade flex-direction: column; especifica que os elementos
+filhos serão organizados verticalmente em uma coluna.
+Em seguida, a propriedade justify-content: center; é utilizada para
+centralizar verticalmente os elementos filhos dentro desse contêiner
+flexível.
+Com a propriedade align-items: center;, os elementos filhos são
+centralizados horizontalmente dentro do contêiner.
+Já a propriedade max-width: 1200px; define uma largura máxima de
+1 200 pixels para a página, enquanto a propriedade width: 100%; garante
+que a página ocupe 100% da largura disponível do contêiner pai.
+Por fim, margin: 0 auto; estabelece uma margem de 0 pixel na parte
+superior e inferior, enquanto a margem horizontal é definida como
+automática, garantindo o alinhamento central na horizontal. */
+
+.conteudo-principal { display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* as propriedades CSS text-align: left, width: 100%;, 
+e font-size: 32px; são aplicadas, o que garante que 
+o título esteja à esquerda, ocupe toda a largura 
+da página etenha um tamanho de fonte de 32 pixels. */
+
+.titulo-principal { text-align: left;
+    width: 100%;
+    font-size: 32px;
+    }
+
+    /* Em styles.css, vamos adicionar a cor verde ao novo texto,
+    aplicando somente a tag <span>, filho da classe principal. */
+
+    .titulo-principal span {
+        color: var(--verde); 
+    }
+
+
+
+    /* A propriedade font-family altera a fonte do texto nos botões,
+    proporcionando um estilo de fonte específico. No caso, utilizaremos a
+    fonte CraKra Petch.
+    Já a propriedade background-color modifica a cor de fundo dos
+    botões quando estão em seu estado inativo, definindo a aparência visual.
+    Por sua vez, a propriedade color determina a cor do texto nos botões,
+    estabelecendo-a como branca para contraste.
+    O uso das propriedades display: flex; justify-content: center;
+    align-items: center; alinha e centraliza horizontal e verticalmente
+    os botões dentro de seu contêiner.
+    A propriedade padding adiciona espaçamento interno aos botões,
+    influenciando o espaço ao redor do texto dentro deles.
+    A propriedade font-size controla o tamanho da fonte nos botões.
+    Por fim, a propriedade width: 100%; define a largura dos botões como
+    100% do espaço disponível, garantindo que eles ocupem toda a largura
+    horizontal.*/
+
+    .botao { font-family: «Crakra Petch», sans-serif;
+        background-color: var(--botao-inativo);
+        color: var(--branco); display: flex;
+        justify-content: center;
+        padding: 1em;
+        font-size: 18px;
+        align-items: center;
+        width: 100%;
+        /*os border-button são aqui dentro pois são 
+        caracteristicas dos botoes*/
+        border-bottom: 4px solid var(--botao-ativo); 
+        border-left: 2px solid var(--botao-ativo); 
+        border-right: 2px solid var(--botao-ativo);
+        border-top: none;
+    }
+
+/*  Por último, observe que as bordas dos botões ainda não correspondem
+ao estilo do nosso protótipo. Para resolver essa questão, faremos alguns
+ajustes no estilo das bordas dos botões, estabalecendo a espessura
+dessas bordas e um efeito de cor para botões ativos. */
+
+
+
+
+
+/* facilitar a utilização de um site e a visualização de seu conteúdo
+em diferentes dispositivos. Desse modo, vamos estabelecer uma largura
+máxima de 1 200 pixels para a nossa página. Isso significa que, quando
+a tela for mais larga do que isso, o conteúdo não se estenderá além da
+largura definida. Para realizar essa adaptação, utilizaremos o recurso de
+Media Query, que permite que o conteúdo se ajuste automaticamente às
+diferentes condições, como a resolução da tela.*/
+
+.botoes { display: block;
+}
+@media screen and (min-width: 768px) { .botoes { display: flex;
+}
+}
+
+/*para garantir que as bordas dos botões fiquem arredondadas
+independentemente do tamanho da tela, vamos aplicar as seguintes
+regras de estilo em nosso arquivo CSS.*/
+
+.botao:first-child { border-radius: 40px 0 0 0;
+}
+
+.botao:last-child { border-radius: 0 40px 0 0;
+}
+
+
+/*A propriedade
+background-color estabelecerá a cor de fundo do botão com a classe
+.ativo, usando a variável --botao-ativo. Além disso, a propriedade
+border-bottom inserirá uma borda de 4 pixels de espessura na parte
+inferior do botão, utilizando uma linha sólida com a cor definida pela
+variável var(--verde)*/
+
+.ativo{
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
+    }
+
+/*começando pelas estilizações, vamos para o arquivo style.css para
+adicionarmos uma cor de fundo ao nosso texto. Dessa forma, acrescente
+a propriedade background-color à classe .abas-textos. Defina a cor
+utilizando a variável --texto-fundo.*/
+
+.abas-textos{
+    background-color: var(--texto-fundo); 
+}
+
+/*Note, porém, que há um espaçamento entre os botões 
+no arquivo style.css, na classe .abas-textos, adicione
+um espaçamento interno de 40px utilizando a propriedade padding.
+Além disso, defina um arredondamento de 40px nos eixos inferior e
+esquerdo usando a propriedade border-radius,*/
+
+.abas-textos{
+    background-color: var(--texto-fundo); 
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
+}
+
+/*vamos ajustar cada conteúdo a sua respectiva aba. Para fazer isso,
+utilizaremos a mesma estratégia desenvolvida para fazer com que os
+efeitos visuais sejam mostrados ou removidos dos botões, por meio da
+classe .ativo. É importante notar que, ao adicionar a classe .ativo à
+primeira aba, ou seja, a primeira divisão de conteúdo no arquivo index.
+html, ela receberá a mesma estilização referente ao botão.
+Para resolver essa questão, combinaremos a classe .botao à classe
+.ativo no arquivo style.css. Dessa forma, a mudança de estilo ocorrerá
+somente quando ambos os critérios forem atendidos, garantindo que
+apenas os botões ativos sejam estilizados.*/
+
+.botao.ativo{
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
+}
+
+/*Agora que o conteúdo está ajustado, vamos fazer com que cada um
+deles corresponda às abas clicadas. Para o conteúdo com a classe
+.ativo, usaremos a propriedade display: block;. Isso garantirá que o
+texto do botão ativo seja visível na tela:*/
+
+.aba-conteudo.ativo{ display:block;
+}
+
+/*Para os outros botões não clicados, utilizaremos display: none;,
+tornando invisíveis os textos que não correspondem à aba ativa.*/
+
+.aba-conteudo{ display: none;
+}
+
+/*vamos aprimorar ainda mais
+nossos textos com alguns toques
+finais de estilização. 
+no arquivo style.css, adicione as
+propriedades font-size, text-align, 
+color e text-transform nas
+classes de título principal e secundário,
+conforme as especificações do
+protótipo.*/
+
+.aba-conteudo-titulo-principal{ 
+    font-size: 28px;
+    text-align: center;
+}
+
+.aba-conteudo-titulo-secundario{ 
+    text-align: center;
+    color: var(--verde); 
+    text-transform: uppercase;
+}
+
+
+
+
+
+
